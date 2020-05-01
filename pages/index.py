@@ -16,28 +16,30 @@ column1 = dbc.Col(
         dcc.Markdown(
             """
         
-            ## Your Value Proposition
+            ## What makes a hit song?
+            
+            Whether you're a self proclaimed music afficianato or just a casual listener, you've more
+            than likely heard about the Billboard top charts. If not, Billboard is a magazine publication
+            that since the 1940's has ranked and displayed the most popular songs in the United States.
+            At the end of each year, Billboard compiles a chart of the 100 'hottest' songs, that are widely
+            accepted as the standard for hit songs. 
 
-            Emphasize how the app will benefit users. Don't emphasize the underlying technology.
+            With this app you can explore the metrics that Spotify uses to diversify their songs. The
+            model is based on data analyzing 10 years of Billboard charts from 2010 to 2019. Try altering
+            the features to see if you can predict whether a song will be a hit!
 
-            ✅ RUN is a running app that adapts to your fitness levels and designs personalized workouts to help you improve your running.
-
-            ❌ RUN is the only intelligent running app that uses sophisticated deep neural net machine learning to make your run smarter because we believe in ML driven workouts.
 
             """
         ),
-        dcc.Link(dbc.Button('Your Call To Action', color='primary'), href='/predictions')
+        dcc.Link(dbc.Button('Lets make a hit!', color='success'), href='/predictions')
     ],
     md=4,
 )
 
-gapminder = px.data.gapminder()
-fig = px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", size="pop", color="continent",
-           hover_name="country", log_x=True, size_max=60)
 
 column2 = dbc.Col(
     [
-        dcc.Graph(figure=fig),
+     html.Img(src='assets/spotify1.jpg', className='img-fluid')
     ]
 )
 
